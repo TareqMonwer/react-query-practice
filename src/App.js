@@ -6,15 +6,11 @@ import {
 
 function App() {
 
-  const createPost = async () => {
-    console.log('calling mutation....');
+  const createPost = async (variables) => {
+    // console.log(variables);
     const data = await fetch("https://jsonplaceholder.typicode.com/posts", {
       method: "POST",
-      body: JSON.stringify({
-        title: "foo",
-        body: "bar",
-        userId: 1,
-      }),
+      body: JSON.stringify(variables),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
